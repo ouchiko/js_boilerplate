@@ -1,5 +1,7 @@
 // Extract text plugin - yet to be working!
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// Uglify the code base.  Used in prod builds.
+const Uglify = require("uglifyjs-webpack-plugin");
 
 module.exports = {
     // App Entry Point.
@@ -23,12 +25,8 @@ module.exports = {
             },
             // Load babel and downgrade to es15 for back browsers.
             {
-                test: /\.(js|jsx)$/,
-                loaders: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                  presets: ['es2015', 'react']
-                }
+                test: /.js$/,
+                loader: 'babel-loader?presets[]=es2015'
             }
         ]
     },
@@ -40,7 +38,8 @@ module.exports = {
     },
     // Testing extract of css to file.
     plugins: [
-    	new ExtractTextPlugin("build/[name]@bundle.css")
+    	new ExtractTextPlugin("build/[name]@bundle.css"),
+        new Uglify()
 	]
 };
 //

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo');
+body {
+    margin: 20px;
+    padding: 20px;
+}
+
+.info-block {
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 200px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    min-height: 100px;
+}
+
+.name {
+    font-family: Arvo;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.some {
+    font-family: Arvo;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.title {
+    font-family: Arvo;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
