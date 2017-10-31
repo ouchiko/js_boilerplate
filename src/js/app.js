@@ -1,20 +1,14 @@
 // Imports and requires.
 import HotelFetcher from './App/Fetchers/HotelFetcher';
 
-require("!style-loader!css-loader!../css/app.css");
-
-// // We'll use some React later on as an example
-// window.React = require("react");
-// window.ReactDOM = require("react-dom");
+// Embedded Styling.
+//require("!style-loader!css-loader!../css/app.css");
 
 // Collection of Hotels.
 window.hotelCollection = [];
 window.reactComponents = [];
 
 document.addEventListener("DOMContentLoaded",function(){
-    // Fetch a hotel information by ID.
-    // HotelFetcher will create a new Hotel instance, attach it
-    // to the hotelCollection element and render the info.
     new HotelFetcher("123456");
     new HotelFetcher("123456");
 

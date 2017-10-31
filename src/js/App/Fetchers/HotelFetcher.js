@@ -1,13 +1,29 @@
 import Hotel from '../Hotels/Hotel.jsx';
-
+/**
+ * App > Fetchers
+ * Collection of fetcher classes for obtaining remote data.
+ * Constructor contains property elements to send to server.
+ * Method is the fetcher and subsequent class initialiser
+ */
 class HotelFetcher
 {
+    /**
+     * Define a new Hotel() instance
+     *
+     * @param <int> hmid
+     */
     constructor(hmid)
     {
         this._hmid = hmid;
         this.makeHotelRequest();
     }
 
+    /**
+     * Makes a remote hotel request.
+     * Currently using mock data.
+     *
+     * Generates a new Hotel() instance.
+     */
     makeHotelRequest()
     {
         fetch('http://localhost/data/hotel2.json', {

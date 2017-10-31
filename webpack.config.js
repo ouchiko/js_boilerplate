@@ -4,23 +4,23 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     // App Entry Point.
     entry: {
-        app: "./src/js/app.js"
+        app: "./src/js/app.js",
+        //css: "./src/css/app.css"
     },
     // What are we building this too?
     output: {
         path: __dirname+"/build",
-        filename: "[name]@bundle.js"
+        filename: "app@bundle.js"
     },
     // Rules!
     module: {
+        // loaders: [
+        //     {
+        //         test: /\.css$/,
+        //         loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+        //     }
+        // ],
         rules: [
-            {
-                test: /.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader']
-                })
-            },
             // Load babel and downgrade to es15 for back browsers.
             {
                 test: /\.(js|jsx)$/,
@@ -40,7 +40,7 @@ module.exports = {
     },
     // Testing extract of css to file.
     plugins: [
-    	new ExtractTextPlugin("build/[name]@bundle.css")
+    //	new ExtractTextPlugin("app.css")
 	]
 };
 //
